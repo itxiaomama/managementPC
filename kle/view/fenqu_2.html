@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>快乐8组合分析</title>
+    <meta name="keywords" content="����8����ͼ,����8������������ͼ" />
+    <meta name="description"
+        content="��������8����ͼƵ���ṩרҵ�Ŀ���8������������ͼ��������ṩ�ϰ��ֿ���8����ͼָ�꣬Ϊ�����н�·�ϵĲ������" />
+    <meta name="applicable-device" content="pc">
+    <meta http-equiv="Cache-Control" content="no-transform " />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="alternate" type="application/vnd.wap.xhtml+xml" media="handheld" href="target" />
+    <link href="../../include/css_new/g.css" rel="stylesheet" type="text/css" />
+    <link href="../style/red/detail.css" rel="stylesheet" type="text/css" />
+    <style>
+        #container {
+            position: absolute;
+            top: 5%;
+        }
+
+        .serBtn {
+            background: red;
+            border-radius: 4px;
+            width: 100px;
+            height: 32px;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .BSeach input {
+            border: 1px solid red;
+            border-radius: 4px;
+            height: 30px;
+            font-size: 16px;
+            padding-left: 0.5%;
+
+
+        }
+
+        .BSeach {
+            padding: 0.5%;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        #yucehang {
+            border: 2px solid red;
+        }
+
+        .serBtn:hover {
+            background: #c95050;
+        }
+
+        .yc_ball_red_click {
+            background: red !important;
+            border-radius: 50% !important;
+        }
+
+        .ych_td:nth-child(2),
+        .ych_td:nth-child(3),
+        .ych_td:nth-child(4) {
+            display: none;
+        }
+
+        input:-moz-placeholder,
+        textarea:-moz-placeholder {
+            color: #ddd;
+        }
+
+        input:-ms-input-placeholder,
+        textarea:-ms-input-placeholder {
+            color: #ddd;
+        }
+
+        input::-webkit-input-placeholder,
+        textarea::-webkit-input-placeholder {
+            color: #ddd;
+        }
+
+        .redtitle {
+            color: #c95050;
+            font-weight: 600;
+        }
+
+        .redspan span {
+            color: #c95050;
+            font-weight: 600;
+        }
+
+        .redtitle:not(:first-child) {
+            padding-left: 1%;
+        }
+
+        .redbox {
+            width: 33%;
+            display: block;
+            float: left;
+        }
+
+        #redYuceDiv {
+            float: left !important;
+            width: 95% !important;
+        }
+    </style>
+    <script language="javascript" type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/line.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/common_20201216.js?v=345"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?78803024be030ae6c48f7d9d0f3b6f03";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            } else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+</head>
+
+<body>
+    <link type="text/css" rel="stylesheet" media="all" href="/head_ssqzj/3dimages/style/nstyle_new.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="/head_ssqzj/3dimages/style/footer.css" />
+    <link href="/include/css/ssqzj_style/fc_newzst.css" rel="stylesheet" />
+    <script language="JavaScript" src=".//include/js/jquery.min.js"></script>
+    <input type="hidden" id="lotteryId" name="lotteryId" value="newkl8" />
+    <input type="hidden" id="qihao" name="qihao" value="2022108" />
+    <input type="hidden" id="lastqs" name="lastqs" value="2022109" />
+    <input type="hidden" id="pageHtml" name="pageHtml" value="fenqu" />
+    <input type="hidden" id="tp" name="tp" value="2" />
+    <div class="content">
+    </div>
+    <div class="BSeach">
+        期数设置： <input type="text" name="startNum" id="startNum" placeholder="起期"> 至 <input type="text" name="endNum"
+            id="endNum" placeholder="止期"> <button class="serBtn" type="submit" value="">立即获取</button>
+    </div>
+    <div id="container">
+        <div id="tableId" class="newtableId">
+        </div>
+    </div>
+    <style>
+        /* .addgl {
+            height: auto;
+        }
+
+        #hongNum {
+            height: auto;
+        } */
+
+        .choose {
+            margin-left: 20px;
+            display: flex;
+        }
+
+        .choosediv {
+            display: flex;
+        }
+
+        .yc_ball_red_1 {
+            display: block;
+            color: #aaa;
+            cursor: pointer;
+            background: url(../images/yuce_qiu.gif) no-repeat center center;
+        }
+
+        .yc_ball_red2 {
+            display: block;
+            color: #aaa;
+            cursor: pointer;
+            background: url(../images/yuce_qiu.gif) no-repeat center center;
+        }
+
+        .yc_ball_red3 {
+            display: block;
+            color: #aaa;
+            cursor: pointer;
+            background: url(../images/yuce_qiu.gif) no-repeat center center;
+        }
+
+        .jt_ico_no1 {
+            height: 20px;
+            width: 40px;
+        }
+
+        .jt_ico_no5 {
+            height: 30px;
+            width: 50px;
+            margin: 3px 0 3px 6px;
+            font-size: 13px !important;
+        }
+
+
+        .choose-button {
+            display: flex;
+        }
+
+        button {
+            margin-left: 0px;
+            border: 1px solid rgb(157, 157, 157);
+        }
+
+        .newtableId {
+            width: 1600px;
+            transform-origin: left top
+        }
+
+        .stop {
+            display: none;
+            border: 0 !important;
+
+        }
+
+        .stare {
+            border: 0 !important;
+
+
+        }
+
+        .yc_ball_red_c {
+            border-radius: 5px;
+        }
+
+        .jixuan {
+            width: 60px;
+            height: 56px;
+            border: 0;
+            background-color: #fefeeb;
+        }
+
+        .border_xxx {
+            border: 0 !important;
+        }
+
+
+        #starebtn {
+            cursor: pointer;
+            width: 70px !important;
+            height: 30px !important;
+            border-radius: 5px;
+            margin: 3px 0 3px 10px;
+        }
+
+        #stopbtn {
+            cursor: pointer;
+            width: 70px !important;
+            height: 30px !important;
+            border-radius: 5px;
+            margin: 3px 0 3px 10px;
+        }
+
+
+        .colorstare {
+            color: rgb(252, 63, 63);
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .colorstop {
+            color: rgb(20, 20, 20);
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .border_more {
+            border: 0 !important;
+        }
+
+        .jt_ico_no_more {
+            height: 30px;
+            width: 50px;
+            margin: 3px 0 3px 6px;
+            font-size: 13px !important;
+        }
+
+        .yc_ball_red_more {
+            border-radius: 5px;
+        }
+
+        #starebtnMore {
+            cursor: pointer;
+            width: 70px !important;
+            height: 30px !important;
+            border-radius: 5px;
+            margin: 3px 0 3px 10px;
+        }
+
+        #stopbtnMore {
+            cursor: pointer;
+            width: 70px !important;
+            height: 30px !important;
+            border-radius: 5px;
+            margin: 3px 0 3px 10px;
+        }
+
+
+        .colorstareMore {
+            color: rgb(252, 63, 63);
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .colorstopMore {
+            color: rgb(20, 20, 20);
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .stareMore {
+            border: 0 !important;
+        }
+
+        .stopMore {
+            display: none;
+            border: 0 !important;
+        }
+
+        #hongNum {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #hongNum>div {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .reddiv {
+            width: 100%;
+            padding-bottom: 20px;
+            margin-top: 10px;
+            border-bottom: 1px solid rgb(31, 31, 31);
+        }
+    </style>
+    <div class="content">
+        <div class="zhibiao">
+        </div>
+        <script language="javascript" type="text/javascript">
+            var tbodyId = 'pagedata';
+            var hasLian = true;
+            var lianStartIndex = '2';
+            var lianEndIndex = '80';
+            var hasYilou = true;
+            var missStartIndex = '1';
+            var missLen = '81';
+            var missStyle = 'bg_red,bg_red_02';
+            var hasZhexian = false;
+            var hasAddFilter = true;
+            var tdlength = 81;
+            scrollYPostion = 391;
+            bodyClientHeight = 1659;
+            var hasDuanqu = false;
+            var duanquStyle = 'qiu_red,qiu_red_02,qiu_zong,qiu_lv,qiu_anlv,qiu_zi,qiu_shenlv';
+            var duanquStartIndex = "2,42";
+            var duanquLen = "40,40";
+            var arrBleft = new Array(2, 10, 18, 19, 27, 35);
+
+            function showTjTbody(object, e) {
+                $('#lstj').html($(object).text());
+                $("tbody.tableFoots").hide();
+                $("tbody." + e).show();
+            }
+        </script>
+        <script type="text/javascript" src="../js/extra.js"></script>
+        <script type="text/javascript">
+            var d1 = (Math.ceil((new Date() - new Date(new Date().getFullYear().toString())) / (24 * 60 * 60 * 1000)) -
+                10).toFixed(0);
+            if (d1 - 20 < 100) {
+                var d2 = '0' + (d1 - 20).toFixed(0)
+            }
+            if (d1 - 20 < 10) {
+                var d2 = '00' + (d1 - 20).toFixed(0)
+            }
+            var d2 = (d1 - 20).toFixed(0)
+            var date = new Date()
+            year = date.getFullYear()
+            $.get("http://cp.cngiantech.com/fenquContent", {
+                "type": "2",
+                "qc": 30,
+                "st": 1,
+                "tp": 2,
+                "stq": year + d2,
+                "enq": year + d1,
+            }, function (response) {
+                $("#tableId").html(response);
+                let twoThobdy = `
+                    <tr class="ych_td add_ych_td">       
+                        <td class="border_left border_t add_border"><span class="yc_ball_red"  id="yc_ball_red_1"
+                                onclick='yuceClickCom(this)'>01</span>
+                        </td>
+                        <td class="border_t border_left add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                        onclick='yuceClickCom(this)'>02</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>03</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>04</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>05</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>06</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>07</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>08</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>09</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>10</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>11</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>12</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>13</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>14</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>15</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>16</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>17</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>18</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>19</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>20</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>21</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>22</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>23</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>24</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>25</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>26</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>27</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>28</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>29</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>30</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>31</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>32</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>33</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>34</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>35</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>36</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>37</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>38</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>39</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>40</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>41</span></td>
+                        <td class="border_t add_border border_left"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>42</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>43</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>44</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>45</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>46</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>47</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>48</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>49</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>50</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>51</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>52</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>53</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>54</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>55</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>56</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>57</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>58</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>59</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>60</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>61</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>62</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>63</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>64</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>65</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>66</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>67</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>68</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>69</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>70</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>71</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>72</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>73</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>74</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>75</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>76</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>77</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>78</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>79</span></td>
+                        <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1" onclick='yuceClickCom(this)'>80</span></td>
+                    </tr>`
+                let newDiv = ` <tr id='trtrtr'>
+                                <td colspan="2" rowspan="2"><button class="jixuan">机选行</button></td>
+                                <td colspan="3" class="border_l border_xxx border_t add_border_c">
+                                <button class="jt_ico_no5 yc_ball_red_c" id="1"
+                                    onclick="newClickCom(this)">选1</button>
+                                </td>
+                                <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                <button id="2" onclick="newClickCom(this)" class="jt_ico_no5  yc_ball_red_c">选2</button>
+                                </td>
+                                <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                <button id="3" onclick="newClickCom(this)" class="jt_ico_no5  yc_ball_red_c">选3</button>
+                                </td>
+                                <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                <button id="4" onclick="newClickCom(this)" class="jt_ico_no5  yc_ball_red_c">选4</button>
+                                </td>
+                                <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                <button id="5" onclick="newClickCom(this)" class="jt_ico_no5  yc_ball_red_c">选5</button>
+                                </td>
+                                <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                <button id="6" onclick="newClickCom(this)" class="jt_ico_no5  yc_ball_red_c">选6</button>
+                                </td>
+                                <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                <button id="7" onclick="newClickCom(this)" class="jt_ico_no5  yc_ball_red_c">选7</button>
+                                </td>
+                                <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                <button id="8" onclick="newClickCom(this)" class="jt_ico_no5  yc_ball_red_c">选8</button>
+                                </td>
+                                <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                <button id="9" onclick="newClickCom(this)" class="jt_ico_no5  yc_ball_red_c">选9</button>
+                                </td>
+                                <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                <button id="10" onclick="newClickCom(this)" class="jt_ico_no5  yc_ball_red_c">选10</button>
+                                </td>
+                                 
+                                 <td colspan="5" class="stare">
+                                     <button id="starebtn" onclick="stare()"
+                                         class="colorstare">单选开始</button>
+                                 </td>
+                                 
+                                   <td colspan="5" class="stop">
+                                       <button id="stopbtn" class="colorstop">单选暂停</button>
+                                   </td>
+
+
+          <td colspan="3" class=" border_more ">
+              <button id="1" class="jt_ico_no_more  yc_ball_red_more" onclick="newClickComMore(this)">1组</button>
+          </td>
+                                      <td colspan="3" class=" border_more ">
+                                          <button id="2" class="jt_ico_no_more  yc_ball_red_more" onclick="newClickComMore(this)" >2组</button>
+                                      </td>
+                                      <td colspan="3" class=" border_more ">
+                                          <button id="3" class="jt_ico_no_more  yc_ball_red_more" onclick="newClickComMore(this)">3组</button>
+                                      </td>
+                                      <td colspan="3" class=" border_more ">
+                                          <button id="4" class="jt_ico_no_more  yc_ball_red_more" onclick="newClickComMore(this)">4组</button>
+                                      </td>
+                                      <td colspan="3" class=" border_more ">
+                                          <button id="5" class="jt_ico_no_more  yc_ball_red_more" onclick="newClickComMore(this)">5组</button>
+                                      </td>
+                                      <td colspan="5" class="stareMore">
+                                          <button id="starebtnMore" onclick="stareMore()"
+                                              class="colorstareMore">多选开始</button>
+                                      </td>
+                                        <td colspan="5" class="stopMore">
+                                            <button id="stopbtnMore")"
+                                                class="colorstopMore">多选暂停</button>
+                                        </td>
+                                 
+                        </tr> `
+                $('.ych_td').eq(0).after(newDiv)
+                $('.ych_td').after(twoThobdy)
+                ofset_window('zhibiao');
+                tableHeight = $("#tabledata").height();
+                var narrow = document.body.offsetWidth / 1600,
+                    tb_height = tableHeight * narrow;
+                $("#container").css('height', tb_height);
+                $("#container>div").eq(0).css('transform', 'scale(' + narrow + ')');
+                $("#dqxsDown").click();
+            });
+            $(document).ready(function () {
+                $('.serBtn').click(function () {
+                    var stq = $('#startNum').val()
+                    var enq = $('#endNum').val()
+                    if (stq === '' || enq === '') {
+                        return alert("请输入搜索的期数")
+                    }
+                    $.get("http://cp.cngiantech.com/fenquContent", {
+                        "type": "2",
+                        "qc": 30,
+                        "st": "1",
+                        "tp": 2,
+                        "stq": stq,
+                        "enq": enq,
+                    }, function (response) {
+                        $("#tableId").html(response);
+                        let twoThobdy = `
+                               <tr class="ych_td add_ych_td">
+                                   <td class="border_left border_t add_border"><span class="yc_ball_red"
+                                           id="yc_ball_red_1" onclick='yuceClickCom(this)'>01</span>
+                                   </td>
+                                   <td class="border_t border_left add_border"><span class="yc_ball_red"
+                                           id="yc_ball_red_1" onclick='yuceClickCom(this)'>02</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>03</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>04</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>05</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>06</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>07</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>08</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>09</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>10</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>11</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>12</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>13</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>14</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>15</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>16</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>17</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>18</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>19</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>20</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>21</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>22</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>23</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>24</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>25</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>26</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>27</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>28</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>29</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>30</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>31</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>32</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>33</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>34</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>35</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>36</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>37</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>38</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>39</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>40</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>41</span></td>
+                                   <td class="border_t add_border border_left"><span class="yc_ball_red"
+                                           id="yc_ball_red_1" onclick='yuceClickCom(this)'>42</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>43</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>44</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>45</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>46</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>47</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>48</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>49</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>50</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>51</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>52</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>53</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>54</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>55</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>56</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>57</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>58</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>59</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>60</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>61</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>62</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>63</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>64</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>65</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>66</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>67</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>68</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>69</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>70</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>71</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>72</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>73</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>74</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>75</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>76</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>77</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>78</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>79</span></td>
+                                   <td class="border_t add_border"><span class="yc_ball_red" id="yc_ball_red_1"
+                                           onclick='yuceClickCom(this)'>80</span></td>
+                               </tr>`
+                        let newDiv = ` <tr id='trtrtr'>
+                                   <td colspan="2" rowspan="2"><button class="jixuan">机选行</button></td>
+                                   <td colspan="3" class="border_l border_xxx border_t add_border_c">
+                                       <button class="jt_ico_no5 yc_ball_red_c" id="1"
+                                           onclick="newClickCom(this)">选1</button>
+                                   </td>
+                                   <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                       <button id="2" onclick="newClickCom(this)"
+                                           class="jt_ico_no5  yc_ball_red_c">选2</button>
+                                   </td>
+                                   <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                       <button id="3" onclick="newClickCom(this)"
+                                           class="jt_ico_no5  yc_ball_red_c">选3</button>
+                                   </td>
+                                   <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                       <button id="4" onclick="newClickCom(this)"
+                                           class="jt_ico_no5  yc_ball_red_c">选4</button>
+                                   </td>
+                                   <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                       <button id="5" onclick="newClickCom(this)"
+                                           class="jt_ico_no5  yc_ball_red_c">选5</button>
+                                   </td>
+                                   <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                       <button id="6" onclick="newClickCom(this)"
+                                           class="jt_ico_no5  yc_ball_red_c">选6</button>
+                                   </td>
+                                   <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                       <button id="7" onclick="newClickCom(this)"
+                                           class="jt_ico_no5  yc_ball_red_c">选7</button>
+                                   </td>
+                                   <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                       <button id="8" onclick="newClickCom(this)"
+                                           class="jt_ico_no5  yc_ball_red_c">选8</button>
+                                   </td>
+                                   <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                       <button id="9" onclick="newClickCom(this)"
+                                           class="jt_ico_no5  yc_ball_red_c">选9</button>
+                                   </td>
+                                   <td colspan="3" class="border_l border_xxx  border_t add_border_c">
+                                       <button id="10" onclick="newClickCom(this)"
+                                           class="jt_ico_no5  yc_ball_red_c">选10</button>
+                                   </td>
+
+                                   <td colspan="5" class="stare">
+                                       <button id="starebtn" onclick="stare()" class="colorstare">单选开始</button>
+                                   </td>
+
+                                   <td colspan="5" class="stop">
+                                       <button id="stopbtn" class="colorstop">单选暂停</button>
+                                   </td>
+
+
+                                   <td colspan="3" class=" border_more ">
+                                       <button id="1" class="jt_ico_no_more  yc_ball_red_more"
+                                           onclick="newClickComMore(this)">1组</button>
+                                   </td>
+                                   <td colspan="3" class=" border_more ">
+                                       <button id="2" class="jt_ico_no_more  yc_ball_red_more"
+                                           onclick="newClickComMore(this)">2组</button>
+                                   </td>
+                                   <td colspan="3" class=" border_more ">
+                                       <button id="3" class="jt_ico_no_more  yc_ball_red_more"
+                                           onclick="newClickComMore(this)">3组</button>
+                                   </td>
+                                   <td colspan="3" class=" border_more ">
+                                       <button id="4" class="jt_ico_no_more  yc_ball_red_more"
+                                           onclick="newClickComMore(this)">4组</button>
+                                   </td>
+                                   <td colspan="3" class=" border_more ">
+                                       <button id="5" class="jt_ico_no_more  yc_ball_red_more"
+                                           onclick="newClickComMore(this)">5组</button>
+                                   </td>
+                                   <td colspan="5" class="stareMore">
+                                       <button id="starebtnMore" onclick="stareMore()"
+                                           class="colorstareMore">多选开始</button>
+                                   </td>
+                                   <td colspan="5" class="stopMore">
+                                       <button id="stopbtnMore" )" class="colorstopMore">多选暂停</button>
+                                   </td>
+
+                               </tr> `
+                        $('.ych_td').eq(0).after(newDiv)
+                        $('.ych_td').after(twoThobdy)
+                        ofset_window('zhibiao');
+                        tableHeight = $("#tabledata").height();
+                        var narrow = document.body.offsetWidth / 1600,
+                            tb_height = tableHeight * narrow;
+                        $("#container").css('height', tb_height);
+                        $("#container>div").eq(0).css('transform', 'scale(' + narrow + ')');
+                        $("#dqxsDown").click();
+                    });
+                })
+            })
+        </script>
+    </div>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?6fc799e99da6a8a3f27e7b43ed491a88";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <link href="../style/red/weeboxtz.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="../js/lian.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/bgiframe.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/weeboxtz.js"></script>
+    <script language="javascript" type="text/javascript" src="../js/kl8Common.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+.dialog-loading {background:url(images/common_loading.gif) no-repeat center; width:100%; height:100%}
+.dialog-mask{border:0px; background:#000; margin:0px; padding:0px; position:absolute; top:0px; left:0px;background:url(../../images/touzhu/dialog_bg.png); _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod="scale", src="/weebox/src/images/dialog_bg.png"); _background:none;}
+.dialog-button{clear: both;}
+.dialog-button input{overflow:visible; overflow-y:hidden;}
+.dialog-btn1,.dialog-ok{border:1px solid #33621D; background:url(images/common_btn_ok.gif) top #88B674; height:24px; line-height:24px; color:#fff;cursor:pointer; padding:0px;padding-left:5px; padding-right:5px; margin:0px;}
+.dialog-btn2,.dialog-cancel{border:1px solid #999; background:url(images/common_btn_cancel.gif) top;height:24px; line-height:24px; color:#666;cursor:pointer;padding:0px;padding-left:5px; padding-right:5px; margin:0px;}
+.dialog-btn1,.dialog-btn2{margin-right:10px}
+.dialog-content{text-align:left; clear:both; overflow:auto;}
+
+.weedialog{width:660px; color:#444;}
+.weedialog a:link,weedialog a:visited {color: #005EAC; text-decoration:none;}
+.weedialog a:hover {color:#ff6600; text-decoration:underline;}
+.weedialog .dialog-header{height:33px; position:relative; cursor:move;}
+.weedialog .dialog-foot{height:5px; overflow:hidden; background:url("../../images/touzhu/foot_bg.gif") repeat-x 0 -71px;}
+.weedialog .dialog-foot .left{width:10px; height:100%; float:left; background:url("../../images/touzhu/foot_bg.gif") no-repeat 0 -66px;}
+.weedialog .dialog-foot .right{width:10px; height:100%; float:right; background:url("../../images/touzhu/foot_bg.gif") no-repeat 0 -76px;}
+.weedialog .dialog-tc{width:auto; height:33px;font-weight:bold;}
+.weedialog .dialog-tc2{height:33px; line-height:33px; font-size:14px; clear:both; background:url(../../images/touzhu/h_bg.gif) repeat-x; color:#c00; text-align:left;}
+.weedialog .dialog-tc2 .left{float:left; width:10px; height:33px; background:url("../../images/touzhu/wrap_j.gif") no-repeat 0 0;}
+.weedialog .dialog-tc2 .right{float:right; width:10px; height:33px; background:url("../../images/touzhu/wrap_j.gif") no-repeat 0 -33px;}
+
+.weedialog .dialog-tc1{height:6px; overflow:hidden; background:url(images/dialog_tc1.png) repeat-x; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod="scale", src="/weebox/src/images/dialog_tc1.png"); _background:none;}
+.weedialog .dialog-tl{position:absolute; left:0px; top:0px;width:11px; height:40px; background:url(images/dialog_tl.png) no-repeat; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod="scale", src="/weebox/src/images/dialog_tl.png"); _background:none;}
+.weedialog .dialog-tr{position:absolute; right:0px;top:0px;width:11px; height:40px; background:url(images/dialog_tr.png) no-repeat; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod="scale", src="/weebox/src/images/dialog_tr.png"); _background:none;}
+.weedialog .dialog-close{float:right;cursor:pointer;height:24px; width:63px; background:url(../../images/touzhu/close_btn.gif) no-repeat; /*_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod="scale", src="/weebox/src/images/dialog_close1.png"); _background:none;*/}
+.weedialog .dialog-close:hover{background:url(../../images/touzhu/close_hover_btn.gif) no-repeat; /*_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod="scale", src="/weebox/src/images/dialog_close2.png"); _background:none;*/}
+.weedialog .dialog-content{clear:both; line-height:20px; padding:0 10px 5px 10px; background:#fff; text-align:left; overflow-y:auto; overflow-x:hidden;border-left:1px solid #b7b7b7;border-right:1px solid #b7b7b7;}
+.weedialog .dialog-button{clear:both; background:#fff;}
+.weedialog .dialog-cl{width:6px;background:url(images/dialog_con_lc.png); _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod="scale", src="/weebox/src/images/dialog_con_lc.png"); _background:none;}
+.weedialog .dialog-cr{width:6px;background:url(images/dialog_con_rc.png); _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod="scale", src="/weebox/src/images/dialog_con_rc.png"); _background:none;}
+.weedialog .dialog-button{text-align:center;padding:15px 0; font-size:12px; background:#fff;border:1px solid #950101;border-top:none;}
+.weedialog .dialog-ok{border:none; background:url(images/btn_ok.gif) no-repeat; height:30px;width:80px;line-height:30px; color:#fff;cursor:pointer; text-align:center;}
+.weedialog .dialog-cancel{border:none; background:url(images/btn_cancel.gif) top; height:30px;width:80px;line-height:30px; color:#666;cursor:pointer; text-align:center;}
+.weedialog .dialog-button-disabled{overflow:visible; overflow-y:hidden; border:1px solid #999; background:url(images/btn_cancel.gif) top; height:24px; line-height:24px; color:#666;cursor:pointer; padding:0 5px; margin:0px;}
+.weedialog .dialog-bot{clear:both; height:11px; position:relative; font-size:0px;}
+.weedialog .dialog-bl{position:absolute; left:0px; top:0px; width:11px; height:11px; background:url(images/dialog_bl.png) no-repeat; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod="scale", src="/weebox/src/images/dialog_bl.png"); _background:none;}
+.weedialog .dialog-bc{margin-left:11px; margin-right:11px; width:auto; height:11px; background:url(images/dialog_bc.png) repeat-x; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod="scale", src="/weebox/src/images/dialog_bc.png"); _background:none;}
+.weedialog .dialog-br{position:absolute; right:0px; top:0px; width:11px; height:11px; background:url(images/dialog_br.png) no-repeat; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod="scale", src="/weebox/src/images/dialog_br.png"); _background:none;}
+
+.weealert .dialog-cancel{display:none;}
+
+.weeselect li{float:left; width:120px;}
+.weeselect .wsearch{width:100%;text-align:right;}
+
+.weesuggest{width:160px;background:#ccc;}
+.weesuggest .dialog-content{padding:5px;}
+.weesuggest li{padding:0px;margin:0px;line-height:20px;cursor:pointer;border-bottom:1px dotted #bbb;}
