@@ -267,6 +267,7 @@ function stareMore(number) {
                 if (addDivArr[item].className === 'yc_ball_red_click') {
                     randomHtml.push(addDivArr[item].innerHTML)
                 }
+                let newSort = randomSort(randomHtml)
             })
             let newArr = []
             function arr2(randomHtml, spliter) {
@@ -294,7 +295,7 @@ function stareMore(number) {
                         } else {
                             html1 = '暂无数据'
                         }
-                        newhtml += `<div><span>第${listNum++}组数据：</span><span class='redspan'><span>${newArr[i].toString()}</span></span>(${numBtn}个，<span class='redspan'>出现:<span>${res.data.times}</span>次</span>,<span class='redspan'>概率:<span>${probability}</span></span><span class='redspan'>%，最大遗漏：<span>${res.data.omission}</span>期），</span> <span class='redspan'><span>${res.data.total}</span>期中同时出现<span>${newArr[i].toString()}</span></span></span>的期数如下：<div class='reddiv'>${html1}</div></div>`
+                        newhtml += `<div><span>第${listNum++}组数据：</span><span class='redspan'><span>${bubbling(newArr[i]).toString()}</span></span>(${numBtn}个，<span class='redspan'>出现:<span>${res.data.times}</span>次</span>,<span class='redspan'>概率:<span>${probability}</span></span><span class='redspan'>%，最大遗漏：<span>${res.data.omission}</span>期），</span> <span class='redspan'><span>${res.data.total}</span>期中同时出现<span>${newArr[i].toString()}</span></span></span>的期数如下：<div class='reddiv'>${html1}</div></div>`
                         $('#hongNum').html(newhtml)
                     }
                 })
@@ -304,7 +305,35 @@ function stareMore(number) {
 
     })
 }
+//冒泡!!!!!!!!!!
+function bubbling(arr) {
+    for (var i = 0; i < arr.length - 1; i++) {
+        // i = 8  依次和后面的 7,6,5,4,3,2,1比较
+        for (var j = i + 1; j < arr.length; j++) {
+            // 如果这一轮中的某个值 比当前要比较的值小 则交换位置
+            if (arr[j] < arr[i]) {
+                var tmp;
+                tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+            }
+        }
+    }
+    return arr
+}
+function randomSort(array) {
+    let length = array.length;
 
+    if (!Array.isArray(array) || length <= 1) return;
+
+    for (let index = 0; index < length - 1; index++) {
+        let randomIndex = Math.floor(Math.random() * (length - index)) + index;
+
+        [array[index], array[randomIndex]] = [array[randomIndex], array[index]];
+    }
+
+    return array;
+}
 function newClickComMore(e) {
     numBtnMore = Number(e.id)
     let addBtnArrMore = $('.border_more .yc_ball_red_more').slice(5, $('.border_more .yc_ball_red_more').length).prevObject;
